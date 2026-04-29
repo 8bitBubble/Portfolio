@@ -22,5 +22,32 @@
       document.getElementById('message').style.color = "green";
     }
   </script>
+<hr>
+  <section id="contact-area" style="padding: 20px;">
+    <h2>Project 1: Secure Contact</h2>
+    <p>Input Validation Proof</p>
+
+    <form id="secureForm" style="max-width: 300px; margin: 0 auto; text-align: left;">
+      <label>Email(Required):</label>
+      <br>
+       <input type="email" id="userEmail" required style="width:100%;">
+      <br>
+      <br>
+        <labe>Your Message(Min 10 characters):</labe>
+      <br>
+      <textarea id="userMessage" minlength="10" required style="width: 100%;"></textarea><br><br>
+      <button type="submit">Submit Securely</button>
+    </form>
+    <p id="formFeedback" style="front-weight: bold; margin-top: 10px;"></p>
+  </section>
+
+  <script>
+    //This scipt intercepts the submit button to show validation in action
+    document.getElementById('secureForm').onsubmit = function(event) {
+      event.preventDefault(); //This stops the page from refreshing
+      const email = document.getElementById('userEmail').value;
+    document.getElementById('formFeedback').innerHTML = "Entry Validated! Securely sending data for:" + email;
+    document.getElementById('formFeedback').style.color = "green";
+  </script>
 </body>
 </html>
