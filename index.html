@@ -49,5 +49,48 @@
     document.getElementById('formFeedback').innerHTML = "Entry Validated! Securely sending data for:" + email;
     document.getElementById('formFeedback').style.color = "green";
   </script>
+  <section id="game-preview" style="padding: 20px;">
+    <h2>Project 2: Hex Tile</h2>
+    <div id="hex-container" style="display: flex; justify-content: center; padding: 20px";>
+    <div id="sovereigntyHex" class="hex-tile" onclick="handleCapture()"></div>
+    </div>
+    <p id="gameStatus">Status: Neutral Territory</p>
+    <style>
+      .hex-tile{
+        width:100px;
+        height: 110px;
+        background-color: #888;/*Neutral Grey*/
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        cursor: pointer;
+        transition: all 0.3s ease; /*Makes the color change smooth*/
+      }
+
+      .hex-tile: hover {
+        transform:scale(1.1);
+        filter: brightness(1.2);
+      }
+
+      .captured {
+        background-color: #2ecc71; /*Success Green*/
+        box-shadow: 0 0 15px #2ecc71;
+      }
+    </style>
+    <script>
+      function handleCapture() {
+        const hex = document.getElementById('sovereigntyHex');
+        const status = document.getElementById('gameStatus')
+
+      hex.classList.toggle('captured')
+
+      if(hex.classList.contains('captured')) {
+        status.innerHTML = "Status: Territory Captured!";
+        status.style.color = "#2ecc71";
+      } else {
+        status.innerHTML = "Status: Nuetral Territory";
+        status.style.color = "black";
+      }
+      }
+    </script>
+  </section>
 </body>
 </html>
