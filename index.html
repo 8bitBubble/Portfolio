@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <style>
+    body {font-family:sans-serif; text-align:center; background: #f4f4f4;}
+    .card {background: white; padding: 20px; border-radius: 10px; display: inline-block; margin-top: 50px; box-shadow: 0 4px 8px(0,0,0,0.1);}
+    button {background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hello! I'm a future developer.</h1>
+    <p>I'm currently learning HTML, CSS, JavaScript, and cybersecurity.</p>
+    <p id="message">Current Status: Building the foundation...</p>
+    <button onclick="changeStatus()">Click for Goal</button>
+  </div>
+
+  <script>
+    function changeStatus() {
+      document.getElementById('message').innerHTML = "Goal: Turn 'Sovereignty' into a web game!";
+      document.getElementById('message').style.color = "green";
+    }
+  </script>
+</body>
+</html>
