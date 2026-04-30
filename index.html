@@ -92,5 +92,48 @@
       }
     </script>
   </section>
+<hr>
+  <section id="dev-log" style="padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+    <h2>Project 3: Sovereignty Dev Log</h2>
+    <p>Documenting mechanics and rule updates in real-time.</p>
+
+    <div style="margin-bottom: 15px;">
+      <input type="text" id="ruleInput" placeholder="Enter a new rule or mechanic..." style="width: 70%; padding: 8px;">
+      <button onclick="addrule()" style="padding: 8px 15px; background-color: #34495e; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Log Rule</button>
+    </div>
+    <ul id="ruleList" style="list-style: none; padding: 0; text-align: left; max-width: 500px; margin: 0 auto;">
+      </ul>
+  </section>
+  
+  <script>
+    function addRule() {
+      const input = 
+    document.getElementById('ruleInput');
+      const list = document.getElementById('ruleList');
+
+      if(input.value.trim()!=="") {
+        //Create the list item
+        const li = document.createElement('li');
+
+        //Get current date
+        const date = new Date().toLocaleDateString();
+
+        //Style and Content
+        li.style.background = "white";
+        li.style.margin = "10px 0";
+        li.style.padding = "10px";
+        li.style.borderLeft = "5px solid #34495e";
+        li.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+        li.innerHTML = `<strong>[${date}]</strong> $ {input.value}`;
+        
+        list.insertBefore(li, list.firstChild);
+        
+      input.value = "";
+    } else {
+      alert("Please enter a rule first!")
+      }
+    }
+  </script>
 </body>
 </html>
